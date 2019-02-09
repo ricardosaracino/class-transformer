@@ -28,6 +28,88 @@
             "scripts": []
           },
           "configurations": {
+            "production-fr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/environments/locale.ts",
+                  "with": "src/environments/locale.fr.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "outputPath": "dist/fr/",
+              "i18nFile": "src/i18n/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr",
+              "i18nMissingTranslation": "error"
+            },
+            "production-en": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "outputPath": "dist/en/",
+              "i18nFile": "src/i18n/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
+            },
+            "fr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/locale.ts",
+                  "with": "src/environments/locale.fr.ts"
+                }
+              ],
+              "i18nLocale": "fr"
+            },
+            "fr1": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/locale.ts",
+                  "with": "src/environments/locale.fr.ts"
+                }
+              ],
+              "aot": true,
+              "outputPath": "dist/fr/",
+              "i18nFile": "src/i18n/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr",
+              "i18nMissingTranslation": "error"
+            },
+            "en": {
+              "i18nLocale": "en"
+            },
+            "en1": {
+              "aot": true,
+              "outputPath": "dist/en/",
+              "i18nFile": "src/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -62,6 +144,12 @@
           "configurations": {
             "production": {
               "browserTarget": "transformer:build:production"
+            },
+            "fr": {
+              "browserTarget": "transformer:build:fr"
+            },
+            "en": {
+              "browserTarget": "transformer:build:en"
             }
           }
         },

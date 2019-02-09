@@ -30,7 +30,7 @@ export class FakeApiService implements InMemoryDbService {
           frLabel: 'Location B FR',
         }
       },
-    ]
+    ];
 
     return {
       schedules

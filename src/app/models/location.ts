@@ -1,13 +1,13 @@
-import {Inject, LOCALE_ID} from '@angular/core';
+import {locale} from '../../environments/locale';
+
 
 export class Location {
 
-  /* todo @Inject(LOCALE_ID)*/ public locale: string = 'en';
+  constructor() {
+  }
 
   get label() {
-    console.log(this.locale);
-
-    return this[`${this.locale}Label`];
+    return this[`${locale}Label`] ? this[`${locale}Label`] : this.enLabel;
   }
 
   id: string;

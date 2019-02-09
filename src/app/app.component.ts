@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {AppService} from './app.service';
 import {Schedule} from './models/schedule';
 
@@ -8,14 +8,20 @@ import {Schedule} from './models/schedule';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'transformer';
 
-  schedules: Schedule[] = []
+  public readonly title = 'Class Transformer with Localization';
 
-  constructor(public appService: AppService) {
+  public schedules: Schedule[] = [];
+
+  @Inject(LOCALE_ID) public localeMember: string;
+
+  constructor(public appService: AppService, @Inject(LOCALE_ID) public locale: string) {
   }
 
   ngOnInit() {
+
+    console.log('AppComponent.locale: ', this.locale);
+    console.log('AppComponent.localeMember: ', this.localeMember);
 
     this.appService.getSchedules().subscribe((schedules: Schedule[]) => {
 
