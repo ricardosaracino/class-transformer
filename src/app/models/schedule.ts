@@ -1,5 +1,5 @@
-import {Type} from "class-transformer";
-import {Location} from "./location";
+import {Type} from 'class-transformer';
+import {Location} from './location';
 
 export class Schedule {
   id: string;

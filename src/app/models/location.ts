@@ -1,4 +1,4 @@
-import {Inject, LOCALE_ID} from "@angular/core";
+import {Inject, LOCALE_ID} from '@angular/core';
 
 export class Location {
 

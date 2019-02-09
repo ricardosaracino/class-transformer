@@ -1,8 +1,9 @@
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import {plainToClass} from "class-transformer";
+import {plainToClass} from 'class-transformer';
 import {Schedule} from './models/schedule';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -13,9 +14,9 @@ export class AppService {
   constructor(private http: HttpClient) {
   }
 
-  getSchedules() {
-    return this.http.get("http://mybackend.com/api/schedules").pipe(
-      map((res : Object[])=> {
+  getSchedules(): Observable<Schedule[]> {
+    return this.http.get('http://mybackend.com/api/schedules').pipe(
+      map((res: Object[]) => {
         return plainToClass(Schedule, res);
       })
     );
